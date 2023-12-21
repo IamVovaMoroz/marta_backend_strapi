@@ -442,6 +442,7 @@ export interface ApiContactContact extends Schema.CollectionType {
     singularName: 'contact';
     pluralName: 'contacts';
     displayName: 'Contact';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -452,7 +453,7 @@ export interface ApiContactContact extends Schema.CollectionType {
     };
   };
   attributes: {
-    phone: Attribute.String &
+    phone1: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -460,6 +461,13 @@ export interface ApiContactContact extends Schema.CollectionType {
         };
       }>;
     email: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    phone2: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
